@@ -1,22 +1,40 @@
-# AWS Lambda Weather Automation
+# AWS Lambda Weather Automation  
 
-This project automates daily weather report emails using **AWS Lambda, SES, S3 & Step Functions**.
+This project automates daily weather report emails using **AWS Lambda, S3, SES, Step Functions, and CloudWatch**.
 
-## Features
-- Fetches weather data from OpenWeather API 
-- Saves reports to S3 for reference
-- Sends daily weather emails via AWS SES 
-- Fully automated with AWS Step Functions 
-- Uses CloudWatch for scheduling 
+## Features  
+✅ Fetches real-time weather data from OpenWeather API 
+✅ Saves weather data to AWS S3   
+✅ Sends a weather report via AWS SES  
+✅ Fully automated workflow using AWS Step Functions   
+✅ CloudWatch triggers to run daily   
 
-## Deployment Steps
+---
 
-### ** AWS Setup**
-- **Create an S3 Bucket:** `your-weather-data-bucket`
-- **Verify Email in AWS SES**
-- **Create IAM Role:** Attach policies `AmazonS3FullAccess`, `AmazonSESFullAccess`, `AWSLambdaBasicExecutionRole`
+##  Project Structure  
+This repository contains:  
+- **`lambda1.py`** → Fetches weather data from OpenWeather API  
+- **`lambda2.py`** → Saves weather data to an AWS S3 bucket  
+- **`lambda3.py`** → Sends an email with the weather report using AWS SES  
+- **`step_function_definition.json`** → AWS Step Function to orchestrate execution  
 
-### ** Deploy Lambda Using AWS CLI**
-```sh
-zip -r lambda_function.zip lambda_function.py
-aws lambda update-function-code --function-name WeatherEmailLambda --zip-file fileb://lambda_function.zip
+---
+
+##  Deployment Steps  
+
+### **AWS Setup**  
+1. **Create an S3 Bucket** → `your-weather-data-bucket`  
+2. **Verify Email in AWS SES**  
+3. **Create an IAM Role** → Attach policies:  
+   - `AmazonS3FullAccess`  
+   - `AmazonSESFullAccess`  
+   - `AWSLambdaBasicExecutionRole`  
+
+---
+
+### ** Upload & Deploy Lambda Functions**  
+1. **Zip each Lambda function**:  
+   ```sh
+   zip notebook_1_jaswanthi_murugudu_ipynb.py.zip notebook_1_jaswanthi_murugudu_ipynb.py.py
+   zip notebook_2_jaswanthi_murugudu.py.zip notebook_2_jaswanthi_murugudu.py
+   zip notebook_3_jaswanthi_murugudu.zip notebook_3_jaswanthi_murugudu.py

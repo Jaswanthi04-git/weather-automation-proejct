@@ -13,9 +13,9 @@ This project automates daily weather report emails using **AWS Lambda, S3, SES, 
 
 ##  Project Structure  
 This repository contains:  
-- **`lambda1.py`** → Fetches weather data from OpenWeather API  
-- **`lambda2.py`** → Saves weather data to an AWS S3 bucket  
-- **`lambda3.py`** → Sends an email with the weather report using AWS SES  
+- **`notebook_1_jaswanthi_murugudu_ipynb.py`** → Fetches weather data from OpenWeather API  and plots the graph
+- **`notebook_2_jaswanthi_murugudu.py`** → Saves weather data to an AWS S3 bucket  and Sends an email with the weather report using AWS SES  
+- **`notebook_3_jaswanthi_murugudu.py.py`** → Take the input and Sends an email with the weather report using AWS SES  
 - **`step_function_definition.json`** → AWS Step Function to orchestrate execution  
 
 ---
